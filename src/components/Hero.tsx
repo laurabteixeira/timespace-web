@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import nlwLogo from '../assets/nlw-spacetime-logo.svg'
+import Link from 'next/link'
 
 export function Hero() {
   return (
@@ -15,12 +16,13 @@ export function Hero() {
           com o mundo!
         </p>
       </div>
-      <a
+      <Link
         className="inline-block rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black transition-colors hover:bg-green-300"
-        href=""
+        href="/memories/new"
       >
         CADASTRAR LEMBRANÇA
-      </a>
+      </Link>
     </div>
   )
+  // Sempre que direcionar o usuário para uma página, usar o <Link></Link> e, não, o <a></a>. Usar o <a></a> para direcionar a outros sites.
 }
