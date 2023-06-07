@@ -5,13 +5,11 @@ import {
   Roboto_Flex as Roboto,
   Bai_Jamjuree as BaiJamjuree,
 } from 'next/font/google'
+
 import { Hero } from '@/components/Hero'
 import { Profile } from '@/components/Profile'
 import { SignIn } from '@/components/SignIn'
 import { Copyright } from '@/components/Copyright'
-
-// Carregar a fonte no Next usando o 'import' e, não, a maneira como o Google fonts recomenda, evita o "Layout Shift".
-// Layout Shift: é quando carregamos uma página na web e as fontes carregam primeiro padrão e, depois de alguns segundos, trocam para as personalizadas.
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' })
 const baiJamjuree = BaiJamjuree({
@@ -19,9 +17,6 @@ const baiJamjuree = BaiJamjuree({
   weight: '700',
   variable: '--font-bai-jamjuree',
 })
-
-// O "latin" serve para configurar o quanto queremos usar dessa fonte, como acentuação própria e tudo mais. Sempre fica em latim.
-// O "variable" serve para integrarmos essa fonte com o TailwindCSS. Criamos um nome para utilizarmos ela no TailwindCSS.
 
 export const metadata = {
   title: 'NLW SpaceTime',
@@ -53,9 +48,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
 
           {/* Right */}
-          {children}
+          <div className="flex max-h-screen flex-col overflow-y-scroll bg-[url(../assets/bg-stars.svg)] bg-cover">
+            {children}
+          </div>
         </main>
       </body>
     </html>
   )
 }
+
+// PS
+// Carregar a fonte no Next usando o 'import' e, não, a maneira como o Google fonts recomenda, evita o "Layout Shift".
+// Layout Shift: é quando carregamos uma página na web e as fontes carregam primeiro padrão e, depois de alguns segundos, trocam para as personalizadas.
+// O "latin" serve para configurar o quanto queremos usar dessa fonte, como acentuação própria e tudo mais. Sempre fica em latim.
+// O "variable" serve para integrarmos essa fonte com o TailwindCSS. Criamos um nome para utilizarmos ela no TailwindCSS.

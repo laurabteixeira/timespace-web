@@ -20,6 +20,7 @@ export default function NewMemory() {
   )
 }
 
+// PS
 // O Next.js, por baixo dos panos, faz a nossa aplicação rodar sem precisar usar o JavaScript. Ele cria a interface da aplicação por uma camada intermediária do frontend e backend. Essa camada é o backend for frontend do Next.js. (Quando criamos uma aplicação Next.js, ele cria um servidor Node.js).
 // Só que existem componentes que precisam de JS para funcionar, sendo estes os componentes que precisam e REATIVIDADE (interação do usuário). Tipo um onChange por exemplo.
 // Para esses componentes, utilizamos uma diretiva chamada onClient().

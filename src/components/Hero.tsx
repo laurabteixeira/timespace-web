@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import nlwLogo from '../assets/nlw-spacetime-logo.svg'
 import Link from 'next/link'
+
+import nlwLogo from '../assets/nlw-spacetime-logo.svg'
 
 export function Hero() {
   return (
@@ -24,5 +25,7 @@ export function Hero() {
       </Link>
     </div>
   )
-  // Sempre que direcionar o usuário para uma página, usar o <Link></Link> e, não, o <a></a>. Usar o <a></a> para direcionar a outros sites.
 }
+
+// PS
+// Sempre que direcionar o usuário para uma página, usar o <Link></Link> e, não, o <a></a>. Usar o <a></a> para direcionar a outros sites.

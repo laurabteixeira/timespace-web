@@ -2,9 +2,9 @@
 import { Camera } from 'lucide-react'
 import { MediaPicker } from './MediaPicker'
 import { FormEvent } from 'react'
-import Cookie from 'js-cookie'
 import { api } from '@/lib/api'
 import { useRouter } from 'next/navigation'
+import Cookie from 'js-cookie'
 
 export function NewMemoryForm() {
   const router = useRouter()
@@ -12,6 +12,7 @@ export function NewMemoryForm() {
   async function handleCreateMemory(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
+    // PS
     // Se você estiver interessado apenas nos dados de um formulário específico, FormData(event.target) será a opção mais adequada. Se você quiser coletar os dados de um elemento DOM específico, independentemente de ser um formulário ou não, então FormData(event.currentTarget) é o que você deve usar.
 
     const fileToUpload = formData.get('coverUrl')
