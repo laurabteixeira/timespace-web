@@ -1,4 +1,8 @@
-import { Camera, ChevronLeft } from 'lucide-react'
+// 'use client'
+// Isso faz enviar o JS da página toda, mas só quero enviar o do input nesse caso.
+
+import { NewMemoryForm } from '@/components/NewMemoryForm'
+import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
 
 export default function NewMemory() {
@@ -11,40 +15,11 @@ export default function NewMemory() {
         <ChevronLeft className="h-4 w-4" />
         Voltar à timeline
       </Link>
-
-      <form className="flex flex-1 flex-col gap-2">
-        <div className="flex items-center gap-4">
-          <label
-            htmlFor="media"
-            className="hover: flex cursor-pointer items-center gap-1.5 text-sm text-gray-200 transition hover:text-gray-100"
-          >
-            <Camera className="h-4 w-4" />
-            Anexar mídia
-          </label>
-
-          <label
-            htmlFor=""
-            className="hover: flex items-center gap-1.5 text-sm text-gray-200 transition hover:text-gray-100"
-          >
-            <input
-              type="checkbox"
-              name="isPublic"
-              id="isPublic"
-              value="true"
-              className="bg-gray-400"
-            />
-            Tornar memória pública
-          </label>
-        </div>
-
-        <input type="file" id="media" className="invisible h-0 w-0" />
-        <textarea
-          name="content"
-          spellCheck={false}
-          className="rouded w-full flex-1 resize-none border-0 bg-transparent p-0 text-sm leading-relaxed text-gray-100 placeholder:text-sm placeholder:text-gray-400 focus:ring-0"
-          placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você vai lembrar para sempre!"
-        />
-      </form>
+      <NewMemoryForm />
     </div>
   )
 }
+
+// O Next.js, por baixo dos panos, faz a nossa aplicação rodar sem precisar usar o JavaScript. Ele cria a interface da aplicação por uma camada intermediária do frontend e backend. Essa camada é o backend for frontend do Next.js. (Quando criamos uma aplicação Next.js, ele cria um servidor Node.js).
+// Só que existem componentes que precisam de JS para funcionar, sendo estes os componentes que precisam e REATIVIDADE (interação do usuário). Tipo um onChange por exemplo.
+// Para esses componentes, utilizamos uma diretiva chamada onClient().
